@@ -66,7 +66,7 @@ static void SetWindowManagerHints (
 }
 
 
-int main(int argc, char *argv[])
+int TextBox(int argc, char *argv[])
 {
     Display * display;
     int ScreenNumber;
