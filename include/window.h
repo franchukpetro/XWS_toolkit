@@ -14,16 +14,14 @@
 #define HEIGHT_MIN 50
 #define BORDER_WIDTH 5
 
-
-struct window_info{
-    Display * display;
+class MyWindow{
+public:
+    Display *display;
     Window window;
     GC gc;
-    int fg;
-    int bg;
+
+    void init_window(const char *title);
 };
 
-
-window_info init_window(const char *title);
 
 #endif //XWS_TOOLKIT_WINDOW_H

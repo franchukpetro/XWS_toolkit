@@ -10,31 +10,39 @@
 #include <string.h>
 #include "window.h"
 
-struct button_t {
+typedef enum {BTN_IGNORE_CLICK = 0, BTN_IS_CLICKED = 1, BTN_OTHER1 = 2, BTN_OTHER2 = 3 } button_clicked_state_t;
 
-    int x, y;
-    unsigned int width, height;
+
+
+class Button{
+public:
+    MyWindow in_window;
+    int x;
+    int y;
+    unsigned int width;
+    unsigned int height;
     int mouseover;
     int clicked;
     const char* text;
     XFontStruct* font;
     GC gc;
-    Display *dpy;
-    Window win;
+
+    void init_button(MyWindow window, const char in_text[], int in_x, int in_y);
+    void draw_button(int fg, int bg);
+    void free_button();
+    int is_point_inside(int px, int py);
+    int button_mouseover_changed(const XMotionEvent* xmotion);
+    button_clicked_state_t is_button_clicked(const XButtonEvent* xbutton );
+    void add_button();
+    void handler();
 
 };
 
 
-void init_button(button_t *b, const char in_text[], Display *in_dpy, Window in_win, int in_x, int in_y);
-void draw_button(button_t *b, int fg, int bg);
-void free_button(button_t *b);
-int button_mouseover_changed(button_t *b, const XMotionEvent* xmotion);
 
-button_t add_button(const char *in_text, window_info wi, int in_x, int in_y);
-void handler(window_info wi, button_t button);
 
-typedef enum {BTN_IGNORE_CLICK = 0, BTN_IS_CLICKED = 1, BTN_OTHER1 = 2, BTN_OTHER2 = 3 } button_clicked_state_t;
-button_clicked_state_t is_button_clicked(button_t *b, const XButtonEvent* xbutton );
+
+
 
 
 
