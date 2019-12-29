@@ -6,5 +6,8 @@ set(CMAKE_CXX_STANDARD 11)
 find_package(X11 REQUIRED)
 include_directories(${X11_INCLUDE_DIR})
 
-add_executable(hello ../src/text_box.cpp ../include/text_box.h ../main.cpp)
-target_link_libraries(hello ${X11_LIBRARIES})
+add_executable(example1 example1.cpp
+               include/window.h src/window.cpp
+               include/button.h src/button.cpp
+               include/text_box.h src/text_box.cpp )
+target_link_libraries(example1 ${X11_LIBRARIES})
