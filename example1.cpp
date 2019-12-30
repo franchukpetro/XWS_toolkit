@@ -1,6 +1,7 @@
 #include "include/window.h"
 #include "include/button.h"
 #include "include/text_box.h"
+#include "include/text_input.h"
 
 
 int main() {
@@ -31,6 +32,16 @@ int main() {
     button1.add_button();
 
 
+    /*
+    TextInput text_input;
+    text_input.init_text_input(window, 30, 30);
+    text_input.draw_text_input();
+
+    */
+
+
+
+
 
 
     // loop, for active listening of any events
@@ -50,12 +61,14 @@ int main() {
                 text1.add_text_box();
                 text2.add_text_box();
                 button1.handler();
+
                 XFreeGC(window.display, window.gc);
                 XFlush(window.display);
                 break;
             case KeyPress :
                 // in case of press of any key, close connection and exit from the program
                 XCloseDisplay(window.display);
+                //text_input.handler();
                 _exit(0);
         }
     }
