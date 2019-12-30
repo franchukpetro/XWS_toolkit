@@ -4,10 +4,16 @@
 
 
 int main() {
+
+
+
     XEvent report;
 
     MyWindow window;
     window.init_window("Example");
+
+    int blackColor = BlackPixel(window.display, DefaultScreen(window.display));
+    int whiteColor = WhitePixel(window.display, DefaultScreen(window.display));
 
     XMapWindow(window.display, window.window);
 
@@ -19,11 +25,13 @@ int main() {
     text2.init_text_box(window, "Hey there!!", 10, 30);
     text2.add_text_box();
 
-    /*
+
     Button button1;
-    button1.init_button(window, "Button 1", 10, 50);
+    button1.init_button(window, "Button1", 10, 70);
     button1.add_button();
-    */
+
+
+
 
     // loop, for active listening of any events
     while (1) {
@@ -41,7 +49,7 @@ int main() {
                 XSetForeground(window.display, window.gc, BlackPixel (window.display, 0));
                 text1.add_text_box();
                 text2.add_text_box();
-                //button1.handler();
+                button1.handler();
                 XFreeGC(window.display, window.gc);
                 XFlush(window.display);
                 break;

@@ -36,13 +36,15 @@ void Button::draw_button(int fg, int bg) {
 
 void Button::init_button(MyWindow window, const char in_text[], int in_x, int in_y) {
 
+    in_window = window;
+
     font = get_default_button_font(window.display);
     gc = XCreateGC(window.display, window.window, 0, NULL);
     XSetFont(window.display, window.gc, font->fid);
 
     text = in_text;
 
-    int height = 0, direction = 0, ascent = 0, descent = 0;
+    int direction = 0, ascent = 0, descent = 0;
     XCharStruct overall;
     XTextExtents(font, text, strlen(text), &direction, &ascent, &descent, &overall);
 
@@ -119,7 +121,6 @@ void Button::add_button() {
 
 
 void Button::handler() {
-
     int blackColor = BlackPixel(in_window.display, DefaultScreen(in_window.display));
     int whiteColor = WhitePixel(in_window.display, DefaultScreen(in_window.display));
     Atom wm_delete_window = XInternAtom(in_window.display, "WM_DELETE_WINDOW", False);
@@ -169,7 +170,7 @@ void Button::handler() {
                 break;
         }
         if (do_exit)
-            break; // Event loop
+            break;
     }
     free_button();
 

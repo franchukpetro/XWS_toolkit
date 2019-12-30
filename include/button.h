@@ -39,12 +39,4 @@ public:
 };
 
 
-
-
-
-
-
-
-
-
 #endif //XWS_TOOLKIT_BUTTON_H
