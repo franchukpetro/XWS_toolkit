@@ -2,7 +2,13 @@
 #define PROJECT_WIDGET_H
 
 
+#define WIDTH 300
+#define HEIGHT 100
+
 #include <X11/Xlib.h>
+#include "window.h"
+
+
 
 class MyWidget {
 public:
@@ -16,7 +22,7 @@ public:
     unsigned int width;
     unsigned int height;
 
-    void init(int x, int y);
+    void init(MyWindow window1, int x_in, int y_in, unsigned int Width, unsigned int Height);
 
     void remove();
 

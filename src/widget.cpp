@@ -1,8 +1,17 @@
 #include "../include/widget.h"
 
 
-//TODO: implement init
-void MyWidget::init(int x, int y) {};
+void MyWidget::init(MyWindow window1, int x_in, int y_in, unsigned int Width=WIDTH, unsigned int Height=HEIGHT) {
+    display = window1.display;
+    window = window1.window;
+    gc = window1.gc;
+
+    x = x_in;
+    y = y_in;
+    width = Width;
+    height = Height;
+
+};
 
 //TODO: implement remove
 void MyWidget::remove() {};
