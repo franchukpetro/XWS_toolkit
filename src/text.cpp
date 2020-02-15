@@ -19,5 +19,7 @@ void Text::draw() {
                 text, strlen(text));
 };
 
-//TODO: implement  expose
-void Text::expose() {};
+
+void Text::expose() {
+    draw();
+};

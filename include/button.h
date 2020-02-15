@@ -13,8 +13,10 @@ public:
     int clicked;
     const char* text;
     XFontStruct* font;
+    int fg;
+    int bg;
 
-    void init(int x, int y, const char * text);
+    void init(MyWindow window1, int x, int y, const char * text);
 
     void draw();
 
@@ -27,6 +29,8 @@ private:
     int button_mouseover_changed(const XMotionEvent* xmotion);
 
     button_clicked_state_t is_button_clicked(const XButtonEvent* xbutton );
+
+    void free_button();
 
 };
 
