@@ -2,6 +2,7 @@
 #define PROJECT_BUTTON_H
 
 #include "widget.h"
+#include "MyDialog.h"
 
 typedef enum {BTN_IGNORE_CLICK = 0, BTN_IS_CLICKED = 1, BTN_OTHER1 = 2, BTN_OTHER2 = 3 } button_clicked_state_t;
 
@@ -15,7 +16,7 @@ public:
     int fg;
     int bg;
 
-    void init(MyWindow window1, int x, int y, const char * text);
+    void init(window_info wi, int x, int y, const char * text);
 
     button_clicked_state_t is_button_clicked(const XButtonEvent* xbutton );
     int button_mouseover_changed(const XMotionEvent* xmotion);

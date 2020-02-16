@@ -1,5 +1,5 @@
 #include "../include/button.h"
-
+#include "../include/MyDialog.h"
 
 int Button::is_point_inside(int px, int py) {
     return px >= x && px <= (x + (int) width - 1) &&
@@ -46,12 +46,12 @@ static XFontStruct *get_default_button_font(Display *display) {
 
 
 
-void Button::init(MyWindow window1, int in_x, int in_y, const char *in_text) {
-    display = window1.display;
-    window = window1.window;
-    gc = window1.gc;
+void Button::init(window_info wi, int in_x, int in_y, const char *in_text) {
+    display = wi.display;
+    window = wi.window;
+    gc = wi.gc;
 
-    font = get_default_button_font(window1.display);
+    font = get_default_button_font(display);
     XSetFont(display, gc, font->fid);
 
     text = in_text;

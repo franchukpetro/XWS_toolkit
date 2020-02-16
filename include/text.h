@@ -4,6 +4,7 @@
 
 #include "widget.h"
 #include "window.h"
+#include "MyDialog.h"
 
 
 class Text : public MyWidget {
@@ -11,7 +12,7 @@ public:
 
     const char* text;
 
-    void init(MyWindow window1, const char * in_text, int x_in, int y_in, unsigned int Width, unsigned int Height);
+    void init(window_info wi, const char * in_text, int x_in, int y_in, unsigned int Width, unsigned int Height);
 
     void draw();
 

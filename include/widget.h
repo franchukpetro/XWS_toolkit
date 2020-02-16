@@ -24,6 +24,8 @@ public:
 
     void init(MyWindow window1, int x_in, int y_in, unsigned int Width, unsigned int Height);
 
+    void expose();
+
     void remove();
 
 

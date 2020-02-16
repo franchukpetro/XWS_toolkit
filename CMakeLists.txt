@@ -13,6 +13,7 @@ add_executable(project main.cpp
         src/button.cpp include/button.h
         src/radiobutton.cpp include/radiobutton.h
         src/text_input.cpp include/text_input.h
+        src/MyDialog.cpp include/MyDialog.h
         )
 
 target_link_libraries(project ${X11_LIBRARIES})
