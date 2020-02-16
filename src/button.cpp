@@ -46,7 +46,6 @@ static XFontStruct *get_default_button_font(Display *display) {
 
 
 
-//TODO: implement init, draw and expose
 void Button::init(MyWindow window1, int in_x, int in_y, const char *in_text) {
     display = window1.display;
     window = window1.window;
@@ -72,6 +71,13 @@ void Button::init(MyWindow window1, int in_x, int in_y, const char *in_text) {
 
     fg = BlackPixel(display, DefaultScreen(display));
     bg = WhitePixel(display, DefaultScreen(display));
+
+    XSelectInput(display, window,
+                 ExposureMask |  KeymapStateMask | StructureNotifyMask |
+                 PointerMotionMask | ButtonPressMask | ButtonReleaseMask);
+
+    XFontStruct *font = XLoadQueryFont(display, "fixed");
+
 };
 
 
@@ -112,6 +118,8 @@ void Button::free_button() {
 void Button::expose() {
     draw();
 };
+
+//TODO:implement functions for different events (button click)
 
 
 

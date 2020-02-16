@@ -1,28 +1,21 @@
-#ifndef XWS_TOOLKIT_TEXT_INPUT_H
-#define XWS_TOOLKIT_TEXT_INPUT_H
-
-#include <X11/Xlib.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <X11/Xutil.h>
-#include <X11/keysym.h>
-#include <iostream>
-#include <cstring>
-#include <vector>
-#include "window.h"
+#ifndef PROJECT_TEXT_INPUT_H
+#define PROJECT_TEXT_INPUT_H
 
 
-class TextInput{
+#include "widget.h"
+
+class TextInput : public MyWidget {
 public:
-    MyWindow in_window;
-    std::vector<char*> input;
-    int x;
-    int y;
+    //TODO: if you need, also add 'width' and 'height' attributes for sizes of text input box
+    const char * text;
 
-    void init_text_input(MyWindow window, int in_x, int in_y);
-    void draw_text_input();
-    void handler();
+    void init(MyWindow window1, int x, int y);
+
+    void draw();
+
+    void expose();
+    //TODO: add any helper functions if needed
 };
 
 
-#endif //XWS_TOOLKIT_TEXT_INPUT_H
+#endif //PROJECT_TEXT_INPUT_H
