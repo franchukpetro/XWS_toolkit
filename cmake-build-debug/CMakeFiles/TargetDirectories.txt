@@ -1,3 +1,0 @@
-/home/bohdan/CS_Y3_S1_Labs/OS_Labs/XWS_toolkit-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/bohdan/CS_Y3_S1_Labs/OS_Labs/XWS_toolkit-master/cmake-build-debug/CMakeFiles/project.dir
-/home/bohdan/CS_Y3_S1_Labs/OS_Labs/XWS_toolkit-master/cmake-build-debug/CMakeFiles/edit_cache.dir
