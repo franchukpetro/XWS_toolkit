@@ -6,7 +6,6 @@ void MyDialog::init(const char *title, int in_x, int in_y, int Width, int Height
     y = in_y;
     width = Width;
     height = Height;
-    std::vector<MyWidget> w;
 //    widgets = w;
 
     int ScreenNumber;
@@ -49,12 +48,12 @@ void MyDialog::draw(){
 };
 
 void MyDialog::expose(){
-    for (auto widget : widgets){
-        widget.expose();
+    for (auto widget : w){
+        widget->expose();
     }
 };
 
-void MyDialog::add_widget(MyWidget widget){
-    widgets.push_back(widget);
+void MyDialog::add_widget(MyWidget* widget){
+    w.push_back(widget);
     // here you can somehow check possible events for that widget and add them to vector of events of MyDialog
 };

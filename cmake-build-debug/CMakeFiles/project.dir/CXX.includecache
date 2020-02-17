@@ -74,7 +74,3 @@ include/MyDialog.h
 include/text_input.h
 /home/bohdan/CS_Y3_S1_Labs/OS_Labs/XWS_toolkit-master/include/text_input.h
 
-/home/bohdan/CS_Y3_S1_Labs/OS_Labs/XWS_toolkit-master/src/MyDialog.cpp
-../include/MyDialog.h
-/home/bohdan/CS_Y3_S1_Labs/OS_Labs/XWS_toolkit-master/include/MyDialog.h
-

@@ -13,9 +13,7 @@ void MyWidget::init(MyWindow window1, int x_in, int y_in, unsigned int Width=WID
 
 };
 
-void MyWidget::expose() {
-    std::cout<<"Here"<<std::endl;
-};
+void MyWidget::expose() {};
 
 //TODO: implement remove
 void MyWidget::remove() {};

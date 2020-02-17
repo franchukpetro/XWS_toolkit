@@ -27,10 +27,10 @@ int main() {
     tinput.init(dialog.wi, 20, 100, dialog.width -40, dialog.height/4);
     tinput.draw();
 
-    dialog.add_widget(text_box);
-    dialog.add_widget(button1);
-    dialog.add_widget(button2);
-    dialog.add_widget(tinput);
+    dialog.add_widget(&text_box);
+    dialog.add_widget(&button1);
+    dialog.add_widget(&button2);
+    dialog.add_widget(&tinput);
 
 
     XEvent report;
@@ -62,12 +62,14 @@ int main() {
 
 
                 //TODO: rewrite with dialog expose
-//                dialog.expose();
-
-                text_box.expose();
-                button1.expose();
-                button2.expose();
-                tinput.expose();
+//                for (auto wid : dialog.w){
+//                    wid->expose();
+//                };
+                dialog.expose();
+//                text_box.expose();
+//                button1.expose();
+//                button2.expose();
+//                tinput.expose();
 
 
                 XFreeGC(dialog.wi.display, dialog.wi.gc);

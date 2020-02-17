@@ -17,6 +17,7 @@ struct window_info{
 class MyDialog {
 public:
     window_info wi;
+    std::vector<MyWidget*> w;
 
     //TODO: vector of possible events, for further their handling
     //std::vector<XEvent.type> events_types;
@@ -30,7 +31,7 @@ public:
 
     void expose();
 
-    void add_widget(MyWidget widget);
+    void add_widget(MyWidget* widget);
 
 
 
