@@ -74,7 +74,7 @@ void Button::init(window_info wi, int in_x, int in_y, const char *in_text) {
 
     XSelectInput(display, window,
                  ExposureMask |  KeymapStateMask | StructureNotifyMask |
-                 PointerMotionMask | ButtonPressMask | ButtonReleaseMask);
+                 PointerMotionMask | ButtonPressMask | ButtonReleaseMask | KeyPressMask);
 
     XFontStruct *font = XLoadQueryFont(display, "fixed");
 

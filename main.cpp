@@ -62,14 +62,11 @@ int main() {
 
 
                 //TODO: rewrite with dialog expose
-//                for (auto wid : dialog.w){
-//                    wid->expose();
-//                };
                 dialog.expose();
+
 //                text_box.expose();
 //                button1.expose();
 //                button2.expose();
-//                tinput.expose();
 
 
                 XFreeGC(dialog.wi.display, dialog.wi.gc);
@@ -88,11 +85,11 @@ int main() {
                 break;
             case KeyPress :
                 // in case of press of any key, close connection and exit from the program
-                tinput.key_pressed(report);
-                if ( XKeysymToString(XLookupKeysym(&report.xkey, 0)) == "Escape" )
-                    exit(0);
 //                XCloseDisplay(dialog.wi.display);
 //                _exit(0);
+                tinput.key_pressed(&report);
+                if ( XKeysymToString(XLookupKeysym(&report.xkey, 0)) == "Escape" )
+                    exit(0);
         }
     }
 
