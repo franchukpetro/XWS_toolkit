@@ -7,7 +7,7 @@ void MyDialog::init(const char *title, int in_x, int in_y, int Width, int Height
     width = Width;
     height = Height;
     std::vector<MyWidget> w;
-    widgets = w;
+//    widgets = w;
 
     int ScreenNumber;
 

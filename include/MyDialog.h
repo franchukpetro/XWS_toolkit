@@ -10,6 +10,7 @@ struct window_info{
     Display *display;
     Window window;
     GC gc;
+
 };
 
 

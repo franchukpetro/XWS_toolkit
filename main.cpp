@@ -4,6 +4,7 @@
 #include "include/text.h"
 #include "include/button.h"
 #include "include/MyDialog.h"
+#include "include/text_input.h"
 
 int main() {
     MyDialog dialog;
@@ -22,9 +23,14 @@ int main() {
     button2.init(dialog.wi, 100, 35, "Cancel");
     button2.draw();
 
+    TextInput tinput;
+    tinput.init(dialog.wi, 20, 100, dialog.width -40, dialog.height/4);
+    tinput.draw();
+
     dialog.add_widget(text_box);
     dialog.add_widget(button1);
     dialog.add_widget(button2);
+    dialog.add_widget(tinput);
 
 
     XEvent report;
@@ -56,11 +62,12 @@ int main() {
 
 
                 //TODO: rewrite with dialog expose
-                //dialog.expose();
+//                dialog.expose();
 
                 text_box.expose();
                 button1.expose();
                 button2.expose();
+                tinput.expose();
 
 
                 XFreeGC(dialog.wi.display, dialog.wi.gc);
@@ -79,8 +86,11 @@ int main() {
                 break;
             case KeyPress :
                 // in case of press of any key, close connection and exit from the program
-                XCloseDisplay(dialog.wi.display);
-                _exit(0);
+                tinput.key_pressed(report);
+                if ( XKeysymToString(XLookupKeysym(&report.xkey, 0)) == "Escape" )
+                    exit(0);
+//                XCloseDisplay(dialog.wi.display);
+//                _exit(0);
         }
     }
 
